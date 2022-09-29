@@ -19,6 +19,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"github.com/keptn-sandbox/lifecycle-controller/operator/api/v1alpha1/common"
 	"log"
 	"net/http"
 
@@ -51,7 +52,6 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
 	lifecyclev1alpha1 "github.com/keptn-sandbox/lifecycle-controller/operator/api/v1alpha1"
-	"github.com/keptn-sandbox/lifecycle-controller/operator/controllers"
 	"github.com/keptn-sandbox/lifecycle-controller/operator/webhooks"
 	//+kubebuilder:scaffold:imports
 )
