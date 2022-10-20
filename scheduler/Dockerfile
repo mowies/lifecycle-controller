@@ -13,6 +13,7 @@
 # limitations under the License.
 FROM --platform=$BUILDPLATFORM golang:1.18.7-alpine3.16 as builder
 
+ARG SCHEDULER_COMPATIBLE_K8S_VERSION
 ARG RELEASE_VERSION
 ARG GIT_HASH
 ARG BUILD_TIME
@@ -30,10 +31,10 @@ COPY cmd cmd
 COPY pkg pkg
 
 RUN GOOS=$TARGETOS GOARCH=$TARGETARCH go build -ldflags '\
-    -X k8s.io/component-base/version.gitVersion=$RELEASE_VERSION \
+    -X k8s.io/component-base/version.gitVersion=$SCHEDULER_COMPATIBLE_K8S_VERSION \
     -X main.gitCommit=$GIT_HASH \
     -X main.buildTime=$BUILD_TIME \
-    -X main.buildVersion=$TAG \
+    -X main.buildVersion=$RELEASE_VERSION \
     -w' \
     -o bin/kube-scheduler cmd/scheduler/main.go
 
