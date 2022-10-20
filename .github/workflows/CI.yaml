@@ -165,7 +165,7 @@ jobs:
             BUILD_TIME=dev-${{ env.BUILD_TIME }}
             CONTROLLER_TOOLS_VERSION=${{ env.CONTROLLER_TOOLS_VERSION }}
           builder: ${{ steps.buildx.outputs.name }}
-          push: ${{ ( github.actor != 'renovate[bot]' && github.actor != 'dependabot[bot]' ) && ( github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository ) }}
+          push: false
           cache-from: type=gha, scope=${{ github.workflow }}
           cache-to: type=gha, scope=${{ github.workflow }}
 
