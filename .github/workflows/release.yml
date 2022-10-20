@@ -37,12 +37,13 @@ jobs:
       - release-please
     strategy:
       matrix:
-        - name: "keptn-lifecycle-controller"
-          folder: "operator/"
-        - name: "scheduler"
-          folder: "scheduler/"
-        - name: "functions-runtime"
-          folder: "functions-runtime/"
+        config:
+          - name: "keptn-lifecycle-controller"
+            folder: "operator/"
+          - name: "scheduler"
+            folder: "scheduler/"
+          - name: "functions-runtime"
+            folder: "functions-runtime/"
     runs-on: ubuntu-22.04
     permissions:
       contents: write
@@ -70,11 +71,11 @@ jobs:
       - name: Build Docker Image
         uses: docker/build-push-action@v3
         with:
-          context: ${{ matrix.folder }}
+          context: ${{ matrix.config.folder }}
           platforms: linux/amd64,linux/arm64
           target: production
           tags: |
-            ghcr.io/keptn-sandbox/${{ matrix.name }}:${{ needs.release-please.outputs.tag_name }}
+            ghcr.io/keptn-sandbox/${{ matrix.config.name }}:${{ needs.release-please.outputs.tag_name }}
           build-args: |
             GIT_HASH=${{ env.GIT_SHA }}
             RELEASE_VERSION=dev-${{ env.DATETIME }}
