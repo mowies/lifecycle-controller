@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.1](https://github.com/mowies/lifecycle-controller/compare/v0.2.0...v0.2.1) (2022-10-20)
+
+
+### Bug Fixes
+
+* Dont push in the CI pipeline either ([40cc89b](https://github.com/mowies/lifecycle-controller/commit/40cc89b179c644dcc8c12112166d5d195d86baf4))
+* Dont push in the release pipeline for now ([1a00317](https://github.com/mowies/lifecycle-controller/commit/1a00317aee75a4a61d4af0843a155d408ae857ad))
+
 ## [0.2.0](https://github.com/mowies/lifecycle-controller/compare/v0.3.0...v0.2.0) (2022-10-20)
 
 
