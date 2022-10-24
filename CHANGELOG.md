@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.2.2](https://github.com/mowies/lifecycle-controller/compare/v0.2.1...v0.2.2) (2022-10-24)
+
+
+### Bug Fixes
+
+* **operator:** Fixed starting deployments, when no corresponding app-version is available ([#210](https://github.com/mowies/lifecycle-controller/issues/210)) ([3efa13e](https://github.com/mowies/lifecycle-controller/commit/3efa13e72b900a11a7dd4f65e0fbaae02211a6e9))
+
+
+### Other
+
+* Update repo URL everywhere ([#216](https://github.com/mowies/lifecycle-controller/issues/216)) ([33d494c](https://github.com/mowies/lifecycle-controller/commit/33d494c537ea055d61e6a32d63c7812e0af90575))
+
+
+### Docs
+
+* Add temporary sub-project logo to the repository ([#207](https://github.com/mowies/lifecycle-controller/issues/207)) ([3708cb3](https://github.com/mowies/lifecycle-controller/commit/3708cb31dca6d8fb179bf8e46aa422ced3b877ff))
+* Fix name of keptnappversions ([#215](https://github.com/mowies/lifecycle-controller/issues/215)) ([d6e3e2c](https://github.com/mowies/lifecycle-controller/commit/d6e3e2c2859ee1882902c570b7564a999f479f47))
+* Update the repository links in README after the org migration ([#208](https://github.com/mowies/lifecycle-controller/issues/208)) ([a1ac506](https://github.com/mowies/lifecycle-controller/commit/a1ac5060d909e9fbe0d7874aaee20af06805f033))
+
 ## [0.3.0](https://github.com/keptn/lifecycle-controller/compare/v0.2.0...v0.3.0) (2022-10-20)
 
 
