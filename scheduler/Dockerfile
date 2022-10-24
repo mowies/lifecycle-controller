@@ -53,7 +53,7 @@ CMD ["kube-scheduler"]
 
 FROM gcr.io/distroless/base-debian11:nonroot as production
 
-LABEL org.opencontainers.image.source="https://github.com/keptn-sandbox/lifecycle-controller" \
+LABEL org.opencontainers.image.source="https://github.com/keptn/lifecycle-controller" \
     org.opencontainers.image.url="https://keptn.sh" \
     org.opencontainers.image.title="Keptn Lifecycle Scheduler" \
     org.opencontainers.image.vendor="Keptn" \
