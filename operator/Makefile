@@ -25,7 +25,7 @@ ENVTEST_K8S_VERSION=1.24.2
 ## Tool Versions
 # renovate: datasource=github-releases depName=kubernetes-sigs/kustomize
 KUSTOMIZE_VERSION?=v4.2.0
-# renovate: datasource=github-releases depName=sigs.k8s.io/controller-tools/cmd/controller-gen
+# renovate: datasource=go depName=sigs.k8s.io/controller-tools/cmd/controller-gen
 CONTROLLER_TOOLS_VERSION?=v0.9.2
 
 # Get the currently used golang install path (in GOPATH/bin, unless GOBIN is set)
