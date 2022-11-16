@@ -43,7 +43,7 @@
       "fileMatch": ["(^|\\/)Makefile$"],
       "matchStrings": ["^KUSTOMIZE_VERSION ?\\?= ?(?<currentValue>.*?)$"],
       "datasourceTemplate": "github-tags",
-      "depNameTemplate": "kubernetes-sigs/kustomize"
+      "depNameTemplate": "github.com/kubernetes-sigs/kustomize"
     },
     {
       "fileMatch": ["(^|\\/)Makefile$"],
