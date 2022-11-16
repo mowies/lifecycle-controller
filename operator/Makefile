@@ -23,7 +23,7 @@ VERSION=$(shell echo $(RELEASE_VERSION) | awk -F - '{print $$2}')
 ENVTEST_K8S_VERSION=1.24.2
 
 ## Tool Versions
-# renovate: datasource=github-releases depName=kubernetes-sigs/kustomize
+# renovate: datasource=github-tags depName=kubernetes-sigs/kustomize
 KUSTOMIZE_VERSION?=v4.2.0
 # renovate: datasource=go depName=sigs.k8s.io/controller-tools/cmd/controller-gen
 CONTROLLER_TOOLS_VERSION?=v0.9.2

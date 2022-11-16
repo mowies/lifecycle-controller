@@ -42,13 +42,13 @@
     {
       "fileMatch": ["Makefile$"],
       "matchStrings": ["^KUSTOMIZE_VERSION ?\\?= ?(?<currentValue>.*?)$"],
-      "datasourceTemplate": "github-releases",
+      "datasourceTemplate": "github-tags",
       "depNameTemplate": "kubernetes-sigs/kustomize"
     },
     {
       "fileMatch": ["Makefile$"],
-      "matchStrings": ["^JAEGER_VERSION ?\\?= ?(?<currentValue>.*?)$"],
-      "datasourceTemplate": "github-releases",
+      "matchStrings": ["^JAEGER_VERSION ?\\??= ?(?<currentValue>.*?)$"],
+      "datasourceTemplate": "github-tags",
       "depNameTemplate": "jaegertracing/jaeger"
     },
     {

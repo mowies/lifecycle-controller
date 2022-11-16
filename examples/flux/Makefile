@@ -1,4 +1,4 @@
-# renovate: datasource=github-releases depName=jaegertracing/jaeger
+# renovate: datasource=github-tags depName=jaegertracing/jaeger
 JAEGER_VERSION ?= v1.38.0
 LFC_NAMESPACE ?= keptn-lifecycle-toolkit-system
 PODTATO_NAMESPACE ?= podtato-kubectl

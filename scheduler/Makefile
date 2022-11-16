@@ -44,7 +44,7 @@ $(LOCALBIN):
 	mkdir -p $(LOCALBIN)
 
 ## Tool Versions
-# renovate: datasource=github-releases depName=kubernetes-sigs/kustomize
+# renovate: datasource=github-tags depName=kubernetes-sigs/kustomize
 KUSTOMIZE_VERSION ?= v4.2.0
 
 ## Tool Binaries
