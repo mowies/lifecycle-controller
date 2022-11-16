@@ -17,6 +17,10 @@
     "gomodTidy",
     "gomodMassage"
   ],
+  "ignorePaths": [
+    "**/test/**",
+    "**/tests/**"
+  ],
   "packageRules": [
     {
       "matchManagers": ["gomod"],
