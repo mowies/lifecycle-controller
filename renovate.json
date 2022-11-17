@@ -38,8 +38,10 @@
   "regexManagers": [
     {
       "fileMatch": ["(^|\\/)Makefile$"],
+      "matchStringsStrategy": "combination",
       "matchStrings": [
-        "# renovate: datasource=(?<datasource>.+?) depName=(?<depName>.+?) packageName=(?<packageName>.+?)\\s+?.*?_VERSION ?\\??= ?(?<currentValue>.+?)?$"
+        "^# renovate: datasource=(?<datasource>.+?) depName=(?<depName>.+?) packageName=(?<packageName>.+?)$",
+        "^.*?_VERSION ?\\??= ?(?<currentValue>.+?)?$"
       ],
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
     },
