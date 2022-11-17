@@ -44,22 +44,6 @@
         "^.*?_VERSION ?\\??= ?(?<currentValue>.+?)?$"
       ],
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
-    },
-    {
-      "fileMatch": ["(^|\\/)Makefile$"],
-      "matchStrings": ["^KUSTOMIZE_VERSION ?\\?= ?(?<currentValue>.*?)$"],
-      "datasourceTemplate": "git-tags",
-      "depNameTemplate": "github.com/kubernetes-sigs/kustomize",
-      "packageNameTemplate": "github.com/kubernetes-sigs/kustomize",
-      "versioningTemplate": "semver"
-    },
-    {
-      "fileMatch": ["(^|\\/)Makefile$"],
-      "matchStrings": ["^JAEGER_VERSION ?\\??= ?(?<currentValue>.*?)$"],
-      "datasourceTemplate": "go",
-      "depNameTemplate": "jaegertracing/jaeger",
-      "packageNameTemplate": "github.com/jaegertracing/jaeger",
-      "versioningTemplate": "semver"
     }
   ]
 }
