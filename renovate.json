@@ -33,6 +33,10 @@
     {
       "matchManagers": ["dockerfile"],
       "addLabels": ["docker"]
+    },
+    {
+      "matchPackageNames": ["kubernetes-sigs/kustomize"],
+      "extractVersion": "^kustomize/(?<version>.*)$"
     }
   ],
   "regexManagers": [
@@ -40,8 +44,7 @@
       "fileMatch": ["(^|\\/)Makefile$"],
       "matchStrings": [
         "# renovate: datasource=(?<datasource>.+?) depName=(?<depName>.+?)\\s.*?_VERSION ?\\??= ?(?<currentValue>.+?)?\\s"
-      ],
-      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+      ]
     }
   ]
 }
