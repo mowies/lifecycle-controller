@@ -1,4 +1,4 @@
-# renovate: datasource=github-tags depName=jaegertracing/jaeger
+# renovate: datasource=github-tags depName=jaegertracing/jaeger packageName=jaegertracing/jaeger
 JAEGER_VERSION ?= v1.38.0
 # renovate: datasource=github-tags depName=cert-manager/cert-manager
 CERT_MANAGER_VERSION?=v1.8.0
