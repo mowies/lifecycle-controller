@@ -60,11 +60,6 @@
       "depNameTemplate": "jaegertracing/jaeger",
       "packageNameTemplate": "github.com/jaegertracing/jaeger",
       "versioningTemplate": "semver"
-    },
-    {
-      "fileMatch": ["(^|\\/)Makefile$"],
-      "matchStrings": ["go install (?<depName>sigs\\.k8s\\.io\\/controller-runtime\\/tools\\/setup-envtest)@(?<currentValue>.*)"],
-      "datasourceTemplate": "go"
     }
   ]
 }
