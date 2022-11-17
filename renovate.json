@@ -47,13 +47,17 @@
       "fileMatch": ["(^|\\/)Makefile$"],
       "matchStrings": ["^KUSTOMIZE_VERSION ?\\?= ?(?<currentValue>.*?)$"],
       "datasourceTemplate": "github-tags",
-      "depNameTemplate": "github.com/kubernetes-sigs/kustomize"
+      "depNameTemplate": "github.com/kubernetes-sigs/kustomize",
+      "packageNameTemplate": "github.com/kubernetes-sigs/kustomize",
+      "versioningTemplate": "semver"
     },
     {
       "fileMatch": ["(^|\\/)Makefile$"],
       "matchStrings": ["^JAEGER_VERSION ?\\??= ?(?<currentValue>.*?)$"],
       "datasourceTemplate": "github-tags",
-      "depNameTemplate": "jaegertracing/jaeger"
+      "depNameTemplate": "jaegertracing/jaeger",
+      "packageNameTemplate": "github.com/jaegertracing/jaeger",
+      "versioningTemplate": "semver"
     },
     {
       "fileMatch": ["(^|\\/)Makefile$"],
