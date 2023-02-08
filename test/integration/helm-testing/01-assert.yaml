@@ -1,0 +1,13 @@
+apiVersion: test.keptn.sh/v1alpha1
+kind: TestCrd
+metadata:
+  name: "some-name"
+spec:
+  testField: "some-test-value1"
+---
+apiVersion: test.keptn.sh/v1alpha2
+kind: TestCrd
+metadata:
+  name: "some-name"
+spec:
+  testField: "some-test-value1"
