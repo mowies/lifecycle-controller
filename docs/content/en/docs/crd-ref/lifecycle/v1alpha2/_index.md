@@ -69,30 +69,42 @@ _Appears in:_
 
 
 
+FunctionReference Execute another `KeptnTaskDefinition` that has been defined.
+Populate this field with the value of the `name` field
+for the `KeptnTaskDefinition` to be called.
+This is commonly used to call a general function
+that is used in multiple place with different parameters.
+An example is:
 
+ ```yaml
+ spec:
+   function:
+     functionRef:
+       name: slack-notification
+ ```
 
 _Appears in:_
 - [FunctionSpec](#functionspec)
 
 | Field | Description |
 | --- | --- |
-| `name` _string_ |  |
+| `name` _string_ | Name defines the name of the function to be referenced |
 
 
 #### FunctionSpec
 
 
 
-
+FunctionSpec defines code that is executed as part of a [KeptnTaskDefinition](#keptntaskdefinition).
 
 _Appears in:_
 - [KeptnTaskDefinitionSpec](#keptntaskdefinitionspec)
 
 | Field | Description |
 | --- | --- |
-| `functionRef` _[FunctionReference](#functionreference)_ |  |
-| `inline` _[Inline](#inline)_ |  |
-| `httpRef` _[HttpReference](#httpreference)_ |  |
+| `functionRef` _[FunctionReference](#functionreference)_ | FunctionReference can be used to execute a function that was already defined before |
+| `inline` _[Inline](#inline)_ | Inline can be used to provide code to be executed inline in the manifest |
+| `httpRef` _[HttpReference](#httpreference)_ | HttpReference can be used to reference a Deno script from an external source |
 | `configMapRef` _[ConfigMapReference](#configmapreference)_ |  |
 | `parameters` _[TaskParameters](#taskparameters)_ |  |
 | `secureParameters` _[SecureParameters](#secureparameters)_ |  |
@@ -116,28 +128,47 @@ _Appears in:_
 
 
 
+HttpReference Specify a Deno script to be executed at runtime
+from the remote webserver that is specified.
+For example:
 
+```yaml
+name: hello-keptn-http
+  spec:
+    function:
+      httpRef:
+        url: <url>
+```
 
 _Appears in:_
 - [FunctionSpec](#functionspec)
 
 | Field | Description |
 | --- | --- |
-| `url` _string_ |  |
+| `url` _string_ | Url defines the Deno script that should be executed from a remote server |
 
 
 #### Inline
 
 
 
+Inline Include the actual executable code to execute.
+This can be written as a full-fledged Deno script.
+For example:
 
+```yaml
+function:
+  inline:
+    code: |
+      console.log("Deployment Task has been executed");
+```
 
 _Appears in:_
 - [FunctionSpec](#functionspec)
 
 | Field | Description |
 | --- | --- |
-| `code` _string_ |  |
+| `code` _string_ | Code defines the code that should be run |
 
 
 #### ItemStatus
@@ -258,7 +289,13 @@ _Appears in:_
 
 | Field | Description |
 | --- | --- |
-| `KeptnAppSpec` _[KeptnAppSpec](#keptnappspec)_ |  |
+| `version` _string_ |  |
+| `revision` _integer_ |  |
+| `workloads` _[KeptnWorkloadRef](#keptnworkloadref) array_ |  |
+| `preDeploymentTasks` _string array_ |  |
+| `postDeploymentTasks` _string array_ |  |
+| `preDeploymentEvaluations` _string array_ |  |
+| `postDeploymentEvaluations` _string array_ |  |
 | `appName` _string_ |  |
 | `previousVersion` _string_ |  |
 | `traceId` _object (keys:string, values:string)_ |  |
@@ -444,7 +481,11 @@ _Appears in:_
 
 
 
-KeptnTaskDefinition is the Schema for the keptntaskdefinitions API
+A KeptnTaskDefinition is a CRD used to define tasks that can be run by the Keptn Lifecycle Toolkit as part of
+pre- and post-deployment phases of a deployment. The task definition is a [Deno](https://deno.land/) script.
+Please, refer to the [function runtime](https://github.com/keptn/lifecycle-toolkit/tree/main/functions-runtime)
+for more information about the runtime.
+In the future, we also intend to support other runtimes, especially running a container image directly.
 
 _Appears in:_
 - [KeptnTaskDefinitionList](#keptntaskdefinitionlist)
@@ -454,7 +495,7 @@ _Appears in:_
 | `apiVersion` _string_ | `lifecycle.keptn.sh/v1alpha2`
 | `kind` _string_ | `KeptnTaskDefinition`
 | `metadata` _[ObjectMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.24/#objectmeta-v1-meta)_ | Refer to Kubernetes API documentation for fields of `metadata`. |
-| `spec` _[KeptnTaskDefinitionSpec](#keptntaskdefinitionspec)_ |  |
+| `spec` _[KeptnTaskDefinitionSpec](#keptntaskdefinitionspec)_ | KeptnTaskDefinitionSpec defines tasks to be executed |
 
 
 #### KeptnTaskDefinitionList
@@ -477,14 +518,15 @@ KeptnTaskDefinitionList contains a list of KeptnTaskDefinition
 
 
 
-KeptnTaskDefinitionSpec defines the desired state of KeptnTaskDefinition
+KeptnTaskDefinitionSpec defines tasks to be executed.
+This can be expressed in the FunctionSpec.
 
 _Appears in:_
 - [KeptnTaskDefinition](#keptntaskdefinition)
 
 | Field | Description |
 | --- | --- |
-| `function` _[FunctionSpec](#functionspec)_ |  |
+| `function` _[FunctionSpec](#functionspec)_ | Function defines what function should be executed in this task |
 
 
 
@@ -590,7 +632,13 @@ _Appears in:_
 
 | Field | Description |
 | --- | --- |
-| `KeptnWorkloadSpec` _[KeptnWorkloadSpec](#keptnworkloadspec)_ |  |
+| `app` _string_ |  |
+| `version` _string_ |  |
+| `preDeploymentTasks` _string array_ |  |
+| `postDeploymentTasks` _string array_ |  |
+| `preDeploymentEvaluations` _string array_ |  |
+| `postDeploymentEvaluations` _string array_ |  |
+| `resourceReference` _[ResourceReference](#resourcereference)_ |  |
 | `workloadName` _string_ |  |
 | `previousVersion` _string_ |  |
 | `traceId` _object (keys:string, values:string)_ |  |
