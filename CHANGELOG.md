@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.7.1](https://github.com/mowies/lifecycle-controller/compare/v0.7.0...v0.7.1) (2023-03-20)
+
+
+### Features
+
+* bring back working files ([a4afba6](https://github.com/mowies/lifecycle-controller/commit/a4afba67b22edd1dbde909d3e2afe28a28c50a42))
+* remove helm docs validation pipeline again ([71c743d](https://github.com/mowies/lifecycle-controller/commit/71c743df2854c971123a44543e47ea1b0ed6e538))
+* test commit ([c06bc20](https://github.com/mowies/lifecycle-controller/commit/c06bc208a79a69442dec94ae6358ac961971a73f))
+
 ## [0.7.0](https://github.com/keptn/lifecycle-toolkit/compare/v0.6.0...v0.7.0) (2023-03-16)
 
 
