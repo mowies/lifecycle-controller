@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.7.1](https://github.com/mowies/lifecycle-controller/compare/v0.7.0...v0.7.1) (2023-03-21)
+
+
+### Features
+
+* add helm values to rp files, add back helm validate pipeline ([85db565](https://github.com/mowies/lifecycle-controller/commit/85db565124ea36930e0c55700513ace8ed0867fb))
+* add release please plugin to update helm docs ([5a6bf08](https://github.com/mowies/lifecycle-controller/commit/5a6bf087754bce6470f1da4d21e7469e787668eb))
+* bring back working files ([a4afba6](https://github.com/mowies/lifecycle-controller/commit/a4afba67b22edd1dbde909d3e2afe28a28c50a42))
+* remove helm docs validation pipeline again ([71c743d](https://github.com/mowies/lifecycle-controller/commit/71c743df2854c971123a44543e47ea1b0ed6e538))
+* test commit ([c06bc20](https://github.com/mowies/lifecycle-controller/commit/c06bc208a79a69442dec94ae6358ac961971a73f))
+* try to remove need for rp in validation pipeline ([d2f8096](https://github.com/mowies/lifecycle-controller/commit/d2f80962995dc7084fbeccf5b967cfbdcc5bfa2a))
+* try using yaml matcher ([0195f37](https://github.com/mowies/lifecycle-controller/commit/0195f37a70dc83922b628d148a72a913013d056e))
+
+
+### Other
+
+* add pipeline file back in ([1a26a9b](https://github.com/mowies/lifecycle-controller/commit/1a26a9b603f2f1b25f085b562502d024844d8139))
+* move helm docs generator into sub folder ([792e1fd](https://github.com/mowies/lifecycle-controller/commit/792e1fd70303cb51d0329c83b7ee65e9bc36dbaa))
+* remove pipeline again ([fd361e3](https://github.com/mowies/lifecycle-controller/commit/fd361e3da515998d54ee86d8a671321654e37914))
+* try again ([56b9b32](https://github.com/mowies/lifecycle-controller/commit/56b9b32f673382ab0568a30b636177670fd180e1))
+* try using block comments ([2fd5094](https://github.com/mowies/lifecycle-controller/commit/2fd50940c8deebdbde5bd9d9e070498b572bf129))
+* update helm readme ([e3c91eb](https://github.com/mowies/lifecycle-controller/commit/e3c91eb53bec99c785999549cf2c6c029e46ddcd))
+
 ## [0.7.0](https://github.com/keptn/lifecycle-toolkit/compare/v0.6.0...v0.7.0) (2023-03-16)
 
 
