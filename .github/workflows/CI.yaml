@@ -238,31 +238,31 @@ jobs:
       - name: Check out klt repo
         uses: actions/checkout@v3
 
-      - name: Check out helm-charts repo
-        uses: actions/checkout@v3
-        with:
-          repository: 'keptn/lifecycle-toolkit-charts'
-          path: ./helm-charts-repository
-          token: ${{ secrets.KEPTN_BOT_TOKEN }}
-
-      - name: Generate helm charts
-        env:
-          RELEASE_REGISTRY: ghcr.io/keptn
-        run: make helm-package
-
-      - name: Copy charts from klt to helm repo
-        run: rsync -av --delete --exclude='charts/*.tgz' ./helm/chart/ ./helm-charts-repository/charts/keptn-lifecycle-toolkit/
-
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v5
-        with:
-          token: ${{ secrets.KEPTN_BOT_TOKEN }}
-          path: ./helm-charts-repository
-          commit-message: "feat: update KLT chart"
-          signoff: true
-          branch: klt-chart-update-${{ needs.prepare_ci_run.outputs.BRANCH_SLUG }}
-          delete-branch: true
-          base: main
-          title: "Update KLT Helm chart"
-          body: |
-            :robot: **This is an automated PR for updating and releasing Helm charts from keptn/lifecycle-toolkit!** :robot:
+#      - name: Check out helm-charts repo
+#        uses: actions/checkout@v3
+#        with:
+#          repository: 'keptn/lifecycle-toolkit-charts'
+#          path: ./helm-charts-repository
+#          token: ${{ secrets.KEPTN_BOT_TOKEN }}
+#
+#      - name: Generate helm charts
+#        env:
+#          RELEASE_REGISTRY: ghcr.io/keptn
+#        run: make helm-package
+#
+#      - name: Copy charts from klt to helm repo
+#        run: rsync -av --delete --exclude='charts/*.tgz' ./helm/chart/ ./helm-charts-repository/charts/keptn-lifecycle-toolkit/
+#
+#      - name: Create Pull Request
+#        uses: peter-evans/create-pull-request@v5
+#        with:
+#          token: ${{ secrets.KEPTN_BOT_TOKEN }}
+#          path: ./helm-charts-repository
+#          commit-message: "feat: update KLT chart"
+#          signoff: true
+#          branch: klt-chart-update-${{ needs.prepare_ci_run.outputs.BRANCH_SLUG }}
+#          delete-branch: true
+#          base: main
+#          title: "Update KLT Helm chart"
+#          body: |
+#            :robot: **This is an automated PR for updating and releasing Helm charts from keptn/lifecycle-toolkit!** :robot:
