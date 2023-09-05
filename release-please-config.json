@@ -100,7 +100,7 @@
         "lifecycle-operator",
         "scheduler"
       ],
-      "merge": true
+      "merge": false
     }
   ],
   "changelog-sections": [
