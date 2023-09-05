@@ -1,5 +1,5 @@
 {
-  "separate-pull-requests": true,
+  "separate-pull-requests": false,
   "last-release-sha": "9bb78bb1c74aeb3524fb258d8c77d8493c42cd4f",
   "bump-minor-pre-major": true,
   "bump-patch-for-minor-pre-major": true,
@@ -100,7 +100,7 @@
         "lifecycle-operator",
         "scheduler"
       ],
-      "merge": false
+      "merge": true
     }
   ],
   "changelog-sections": [
