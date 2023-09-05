@@ -2,6 +2,7 @@ FROM --platform=$BUILDPLATFORM golang:1.20.4-alpine3.16 AS builder
 
 ENV CGO_ENABLED=0
 
+
 WORKDIR /workspace
 
 COPY go.mod go.sum ./
