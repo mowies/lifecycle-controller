@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.9.0](https://github.com/mowies/lifecycle-controller/compare/lifecycle-operator-v0.8.3...lifecycle-operator-v0.9.0) (2023-09-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* **lifecycle-operator:** this is a breaking change
+
+### Features
+
+* **lifecycle-operator:** this is a breaking change ([f3374ca](https://github.com/mowies/lifecycle-controller/commit/f3374caf16abb8d14714e76473d027d62391c135))
+
 ## [0.8.3](https://github.com/mowies/lifecycle-controller/compare/lifecycle-operator-v0.8.2...lifecycle-operator-v0.8.3) (2023-09-05)
 
 

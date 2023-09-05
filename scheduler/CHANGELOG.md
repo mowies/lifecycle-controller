@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.9.0](https://github.com/mowies/lifecycle-controller/compare/scheduler-v0.8.3...scheduler-v0.9.0) (2023-09-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* **scheduler:** this is another breaking feature
+
+### Features
+
+* **scheduler:** this is another breaking feature ([f7aec0d](https://github.com/mowies/lifecycle-controller/commit/f7aec0d570e8d4ad3ff6049eb941972e873af4b3))
+
 ## [0.8.3](https://github.com/mowies/lifecycle-controller/compare/scheduler-v0.8.2...scheduler-v0.8.3) (2023-09-05)
 
 
