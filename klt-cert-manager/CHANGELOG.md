@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.1.1](https://github.com/mowies/lifecycle-controller/compare/cert-manager-v1.1.0...cert-manager-v1.1.1) (2023-09-26)
+
+
+### Other
+
+* release cert-manager 1.1.0 ([#1993](https://github.com/mowies/lifecycle-controller/issues/1993)) ([a8c22f7](https://github.com/mowies/lifecycle-controller/commit/a8c22f779eafd68ea12c97c808ad2041fc89acbf))
+* release cert-manager 1.1.0 ([#1998](https://github.com/mowies/lifecycle-controller/issues/1998)) ([5fbee38](https://github.com/mowies/lifecycle-controller/commit/5fbee380634244e32ac0bb90b0cf4b74ee72b661))
+
+
+### Dependency Updates
+
+* update dependency kubernetes-sigs/controller-tools to v0.13.0 ([#1930](https://github.com/mowies/lifecycle-controller/issues/1930)) ([8b34b63](https://github.com/mowies/lifecycle-controller/commit/8b34b63404d0339633ef41ff1cf2005deae8d2b7))
+* update kubernetes packages to v0.26.8 (patch) ([#1945](https://github.com/mowies/lifecycle-controller/issues/1945)) ([6ce03d6](https://github.com/mowies/lifecycle-controller/commit/6ce03d600cbb3d3d3988573c616ec7f3830ba324))
+
 ## [1.1.0](https://github.com/keptn/lifecycle-toolkit/compare/cert-manager-v1.0.0...cert-manager-v1.1.0) (2023-08-31)
 
 
