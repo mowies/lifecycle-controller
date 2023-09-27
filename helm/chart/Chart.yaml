@@ -17,6 +17,8 @@ keywords:
   - pre-deployment
   - post-deployment
   - evaluation
+  - metrics
+  - metric
 annotations:
   artifacthub.io/links: |
     - name: support
