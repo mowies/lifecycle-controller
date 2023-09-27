@@ -1,14 +1,13 @@
-metricsManagerConfig:
-  controllerManagerConfigYaml:
-    health:
-      healthProbeBindAddress: :8081
-    leaderElection:
-      leaderElect: true
-      resourceName: 3f8532ca.keptn.sh
-    metrics:
-      bindAddress: 127.0.0.1:8080
-    webhook:
-      port: 9443
+config:
+  health:
+    healthProbeBindAddress: :8081
+  leaderElection:
+    leaderElect: true
+    resourceName: 3f8532ca.keptn.sh
+  metrics:
+    bindAddress: 127.0.0.1:8080
+  webhook:
+    port: 9443
 containerSecurityContext:
   allowPrivilegeEscalation: false
   capabilities:
