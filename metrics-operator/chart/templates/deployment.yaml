@@ -19,7 +19,7 @@ metadata:
     keptn.sh/inject-cert: "true"
   {{- include "chart.labels" . | nindent 4 }}
 spec:
-  replicas: {{ .Values.metricsOperator.replicas }}
+  replicas: {{ .Values.replicas }}
   selector:
     matchLabels:
       control-plane: metrics-operator
@@ -51,18 +51,18 @@ spec:
             fieldRef:
               fieldPath: metadata.name
         - name: EXPOSE_KEPTN_METRICS
-          value: {{ .Values.metricsOperator.env.exposeKeptnMetrics | quote }}
+          value: {{ .Values.env.exposeKeptnMetrics | quote }}
         - name: ENABLE_ANALYSIS
-          value: {{ .Values.metricsOperator.env.enableKeptnAnalysis | quote }}
+          value: {{ .Values.env.enableKeptnAnalysis | quote }}
         - name: METRICS_CONTROLLER_LOG_LEVEL
-          value: {{ .Values.metricsOperator.env.metricsControllerLogLevel | quote
+          value: {{ .Values.env.metricsControllerLogLevel | quote
             }}
         - name: ANALYSIS_CONTROLLER_LOG_LEVEL
-          value: {{ .Values.metricsOperator.env.analysisControllerLogLevel | quote
+          value: {{ .Values.env.analysisControllerLogLevel | quote
             }}
         - name: KUBERNETES_CLUSTER_DOMAIN
           value: {{ .Values.kubernetesClusterDomain }}
-        image: {{ .Values.metricsOperator.image.repository }}:{{ .Values.metricsOperator.image.tag
+        image: {{ .Values.image.repository }}:{{ .Values.image.tag
           | default .Chart.AppVersion }}
         name: metrics-operator
         ports:
@@ -75,29 +75,29 @@ spec:
         - containerPort: 6443
           name: custom-metrics
           protocol: TCP
-        resources: {{- toYaml .Values.metricsOperator.resources | nindent 10 }}
+        resources: {{- toYaml .Values.resources | nindent 10 }}
         securityContext:
-          allowPrivilegeEscalation: {{ .Values.metricsOperator.containerSecurityContext.allowPrivilegeEscalation
+          allowPrivilegeEscalation: {{ .Values.containerSecurityContext.allowPrivilegeEscalation
             }}
-          capabilities: {{- include "tplvalues.render" (dict "value" .Values.metricsOperator.containerSecurityContext.capabilities
+          capabilities: {{- include "tplvalues.render" (dict "value" .Values.containerSecurityContext.capabilities
             "context" $) | nindent 12 }}
-          privileged: {{ .Values.metricsOperator.containerSecurityContext.privileged
+          privileged: {{ .Values.containerSecurityContext.privileged
             }}
-          runAsGroup: {{ .Values.metricsOperator.containerSecurityContext.runAsGroup
+          runAsGroup: {{ .Values.containerSecurityContext.runAsGroup
             }}
-          runAsNonRoot: {{ .Values.metricsOperator.containerSecurityContext.runAsNonRoot
+          runAsNonRoot: {{ .Values.containerSecurityContext.runAsNonRoot
             }}
-          runAsUser: {{ .Values.metricsOperator.containerSecurityContext.runAsUser
+          runAsUser: {{ .Values.containerSecurityContext.runAsUser
             }}
-          seccompProfile: {{- include "tplvalues.render" (dict "value" .Values.metricsOperator.containerSecurityContext.seccompProfile
+          seccompProfile: {{- include "tplvalues.render" (dict "value" .Values.containerSecurityContext.seccompProfile
             "context" $) | nindent 12 }}
         volumeMounts:
         - mountPath: /tmp/k8s-webhook-server/serving-certs/
           name: certs-dir
         - mountPath: /tmp/metrics-adapter/serving-certs
           name: adapter-certs-dir
-        {{- if .Values.metricsOperator.livenessProbe }}
-        livenessProbe: {{- include "tplvalues.render" (dict "value" .Values.metricsOperator.livenessProbe "context" $) | nindent 10 }}
+        {{- if .Values.livenessProbe }}
+        livenessProbe: {{- include "tplvalues.render" (dict "value" .Values.livenessProbe "context" $) | nindent 10 }}
          {{- else }}
         livenessProbe:
          httpGet:
@@ -106,8 +106,8 @@ spec:
          initialDelaySeconds: 15
          periodSeconds: 20
         {{- end }}
-        {{- if .Values.metricsOperator.readinessProbe }}
-        readinessProbe: {{- include "tplvalues.render" (dict "value" .Values.metricsOperator.readinessProbe "context" $) | nindent 10 }}
+        {{- if .Values.readinessProbe }}
+        readinessProbe: {{- include "tplvalues.render" (dict "value" .Values.readinessProbe "context" $) | nindent 10 }}
          {{- else }}
         readinessProbe:
          httpGet:
