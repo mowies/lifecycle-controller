@@ -1,3 +1,5 @@
+imagePullSecrets: []
+kubernetesClusterDomain: cluster.local
 config:
   health:
     healthProbeBindAddress: :8081

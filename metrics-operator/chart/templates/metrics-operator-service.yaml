@@ -5,11 +5,11 @@ metadata:
   namespace: {{ .Release.Namespace | quote }}
   labels:
     control-plane: metrics-operator
-  {{- include "chart.labels" . | nindent 4 }}
+  {{- include "metrics-operator.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.operatorService.type }}
   selector:
     control-plane: metrics-operator
-  {{- include "chart.selectorLabels" . | nindent 4 }}
+  {{- include "metrics-operator.selectorLabels" . | nindent 4 }}
   ports:
 	{{- .Values.operatorService.ports | toYaml | nindent 2 -}}

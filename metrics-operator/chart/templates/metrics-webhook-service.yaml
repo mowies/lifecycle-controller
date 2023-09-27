@@ -4,11 +4,11 @@ metadata:
   name: metrics-webhook-service
   namespace: {{ .Release.Namespace | quote }}
   labels:
-  {{- include "chart.labels" . | nindent 4 }}
+  {{- include "metrics-operator.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.webhookService.type }}
   selector:
     control-plane: metrics-operator
-  {{- include "chart.selectorLabels" . | nindent 4 }}
+  {{- include "metrics-operator.selectorLabels" . | nindent 4 }}
   ports:
 	{{- .Values.webhookService.ports | toYaml | nindent 2 -}}

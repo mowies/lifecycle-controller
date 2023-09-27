@@ -22,9 +22,9 @@ import (
 
 // AnalysisSpec defines the desired state of Analysis
 type AnalysisSpec struct {
-	//Timeframe specifies the range for the corresponding query in the AnalysisValueTemplate
+	// Timeframe specifies the range for the corresponding query in the AnalysisValueTemplate
 	Timeframe `json:"timeframe"`
-	// Args corresponds to a map of key/value pairs that can be used to substitute placeholders in the AnalysisValueTemplate query. i.e. for args foo:bar the query could be "query:percentile(95)?scope=tag(my_foo_label:{{.foo}})".
+	// Args corresponds to a map of key/value pairs that can be used to substitute placeholders in the AnalysisValueTemplate query. i.e. for args foo:bar the query could be "query:percentile(95)?scope=tag(my_foo_label:{{`{{.foo}}`}})".
 	Args map[string]string `json:"args,omitempty"`
 	// AnalysisDefinition refers to the AnalysisDefinition, a CRD that stores the AnalysisValuesTemplates
 	AnalysisDefinition ObjectReference `json:"analysisDefinition"`
@@ -54,12 +54,12 @@ type AnalysisStatus struct {
 	StoredValues map[string]ProviderResult `json:"storedValues,omitempty"`
 }
 
-//+kubebuilder:object:root=true
-//+kubebuilder:subresource:status
-//+kubebuilder:printcolumn:name="AnalysisDefinition",type=string,JSONPath=.spec.analysisDefinition.name
-//+kubebuilder:printcolumn:name="State",type=string,JSONPath=`.status.state`
-//+kubebuilder:printcolumn:name="Warning",type=string,JSONPath=`.status.warning`
-//+kubebuilder:printcolumn:name="Pass",type=string,JSONPath=`.status.pass`
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:printcolumn:name="AnalysisDefinition",type=string,JSONPath=.spec.analysisDefinition.name
+// +kubebuilder:printcolumn:name="State",type=string,JSONPath=`.status.state`
+// +kubebuilder:printcolumn:name="Warning",type=string,JSONPath=`.status.warning`
+// +kubebuilder:printcolumn:name="Pass",type=string,JSONPath=`.status.pass`
 
 // Analysis is the Schema for the analyses API
 type Analysis struct {
@@ -70,7 +70,7 @@ type Analysis struct {
 	Status AnalysisStatus `json:"status,omitempty"`
 }
 
-//+kubebuilder:object:root=true
+// +kubebuilder:object:root=true
 
 // AnalysisList contains a list of Analysis
 type AnalysisList struct {
