@@ -4,7 +4,7 @@ description: An introduction to Keptn and the usecases.
 weight: 10
 ---
 
-Keptn integrates seamlessly with cloud-native deployment tools
+Keptn integrattes seamlessly with cloud-native deployment tools
 such as ArgoCD, Flux, and Gitlab
 to bring application awareness to your Kubernetes cluster.
 Keptn supplements the standard deployment tools
