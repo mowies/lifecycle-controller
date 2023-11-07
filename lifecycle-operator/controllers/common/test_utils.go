@@ -3,40 +3,40 @@ package common
 import (
 	"fmt"
 
-	lfcv1alpha3 "github.com/keptn/lifecycle-toolkit/lifecycle-operator/apis/lifecycle/v1alpha3"
+	klcv1alpha3 "github.com/keptn/lifecycle-toolkit/lifecycle-operator/apis/lifecycle/v1alpha3"
 	apicommon "github.com/keptn/lifecycle-toolkit/lifecycle-operator/apis/lifecycle/v1alpha3/common"
 	"go.opentelemetry.io/otel/metric"
 	sdkmetric "go.opentelemetry.io/otel/sdk/metric"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-func GetApp(name string) *lfcv1alpha3.KeptnApp {
-	app := &lfcv1alpha3.KeptnApp{
+func GetApp(name string) *klcv1alpha3.KeptnApp {
+	app := &klcv1alpha3.KeptnApp{
 		TypeMeta: metav1.TypeMeta{},
 		ObjectMeta: metav1.ObjectMeta{
 			Name:       name,
 			Namespace:  "default",
 			Generation: 1,
 		},
-		Spec: lfcv1alpha3.KeptnAppSpec{
+		Spec: klcv1alpha3.KeptnAppSpec{
 			Version: "1.0.0",
 		},
-		Status: lfcv1alpha3.KeptnAppStatus{},
+		Status: klcv1alpha3.KeptnAppStatus{},
 	}
 	return app
 }
 
-func ReturnAppVersion(namespace string, appName string, version string, workloads []lfcv1alpha3.KeptnWorkloadRef, status lfcv1alpha3.KeptnAppVersionStatus) *lfcv1alpha3.KeptnAppVersion {
+func ReturnAppVersion(namespace string, appName string, version string, workloads []klcv1alpha3.KeptnWorkloadRef, status klcv1alpha3.KeptnAppVersionStatus) *klcv1alpha3.KeptnAppVersion {
 	appVersionName := fmt.Sprintf("%s-%s", appName, version)
-	app := &lfcv1alpha3.KeptnAppVersion{
+	app := &klcv1alpha3.KeptnAppVersion{
 		TypeMeta: metav1.TypeMeta{},
 		ObjectMeta: metav1.ObjectMeta{
 			Name:       appVersionName,
 			Namespace:  namespace,
 			Generation: 1,
 		},
-		Spec: lfcv1alpha3.KeptnAppVersionSpec{
-			KeptnAppSpec: lfcv1alpha3.KeptnAppSpec{
+		Spec: klcv1alpha3.KeptnAppVersionSpec{
+			KeptnAppSpec: klcv1alpha3.KeptnAppSpec{
 				Version:   version,
 				Workloads: workloads,
 			},
