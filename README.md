@@ -6,7 +6,7 @@
 ![version](https://img.shields.io/github/v/release/keptn/lifecycle-toolkit)
 [![GitHub Discussions](https://img.shields.io/github/discussions/keptn/lifecycle-toolkit)](https://github.com/keptn/lifecycle-toolkit/discussions)
 
-This is the primary repository for
+This is the primary repository forr
 the Keptn software and documentation.
 Keptn provides a “cloud-native” approach
 for managing the application release lifecycle
